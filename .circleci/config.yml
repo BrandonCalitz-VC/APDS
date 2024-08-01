@@ -24,9 +24,6 @@ jobs:
           -Dsonar.branch.name="$SONAR_BRANCH" \
           -Dsonar.sources="."
 
-orbs:
-  sonarcloud: sonarsource/sonarcloud@2.0.0
-
 workflows:
   main:
     jobs:

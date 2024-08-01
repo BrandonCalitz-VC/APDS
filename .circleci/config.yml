@@ -2,7 +2,6 @@ version: 2.1
 
 jobs:
   sonarqube:
-    working_directory: ~/build
     docker:
       - image: sonarsource/sonar-scanner-cli
 
@@ -23,9 +22,3 @@ jobs:
           -Dsonar.login="$SONAR_TOKEN" \
           -Dsonar.branch.name="$SONAR_BRANCH" \
           -Dsonar.sources="."
-
-workflows:
-  main:
-    jobs:
-      - build:
-          context: SonarCloud

@@ -22,3 +22,9 @@ jobs:
           -Dsonar.login="$SONAR_TOKEN" \
           -Dsonar.branch.name="$SONAR_BRANCH" \
           -Dsonar.sources="."
+
+workflows:
+  main:
+    jobs:
+      - sonarqube:
+          context: SonarCloud

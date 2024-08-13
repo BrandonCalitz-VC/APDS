@@ -8,13 +8,13 @@ const router = Router( ) ;
 
 
 
-router.get("/", authMiddleware, async (req, res) =>{
+router.get("/", async (req, res) =>{
     let collection = await db.collection("posts");
     let results = await collection. find({}) .toArray();
     res.send(results).status(200);
 });
 
-router.post("/upload",async (req, res) =>{
+router.post("/upload", authMiddleware,async (req, res) =>{
     let newDocument = {
         user: req.body.user,
         content: req.body.content,
@@ -26,7 +26,7 @@ router.post("/upload",async (req, res) =>{
     });
 
 
-router.patch("/:id", async (req, res) =>{
+router.patch("/:id" , async (req, res) =>{
     const query = {_id: new ObjectId(req.params.id)};
     const update = {
         $set: {
@@ -50,7 +50,7 @@ router.get("/:id", async (req, res) =>{
 });
 
 
-router.delete("/:id", async (req, res) =>{
+router.delete("/:id", authMiddleware, async (req, res) =>{
     const query = {_id: new ObjectId(req.params.id)};
 
     let collection = await db.collection("posts");

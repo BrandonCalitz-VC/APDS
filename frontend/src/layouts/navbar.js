@@ -6,12 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function NavBar() {
   return (
     <div>
-      <nav className='navbar navbar-expanded-lg navbar-light bg-light'>
+      <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         <NavLink className="navbar-brand" to="/">
         <img style={{width: 25 + "%"}} src={logo}/>
         </NavLink>
         <div className='navbar' id="navbarSupportedContent">
-          <ul>
+          <ul className='navbar-nav ml-auto'>
             <NavLink className="nav-link" to="/">List</NavLink>
             <NavLink className="nav-link" to="/create">Create Post</NavLink>
             <NavLink className="nav-link" to="/register">Register</NavLink>

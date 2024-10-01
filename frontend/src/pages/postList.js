@@ -44,7 +44,7 @@ export default function PostList() {
     <div>
       <div className='container'>
         <h3 className='header'> APDS Notice Board</h3>
-        <table>
+        <table className='table table-striped' style={{marginTop :20}}>
           <thead>
             <tr>
               <th>User</th>

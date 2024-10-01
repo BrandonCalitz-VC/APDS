@@ -5,15 +5,16 @@ export default function Post(props) {
     <tr>
       <td>{props.post.user}</td>
       <td>{props.post.content}</td>
-      <td>{props.post.content} && (
-        <img 
-        src={`data:image/jpeg;base64,${props.post.image}`}
-        alt={''}
-        style={{maxWidth: '100px', maxHeight: '100px', objectFit: 'cover'}}
-        />
+      <td>
+        {props.post.content} && (
+          <img 
+          src={`data:image/jpeg;base64,${props.post.image}`}
+          alt={''}
+          style={{maxWidth: '100px', maxHeight: '100px', objectFit: 'cover'}}
+          />
       )
       </td>
-      <td><button onClick={() => props.deletePost(props.post._id)}>Delete</button></td>
+      <td><button className='btn btn-link' onClick={() => props.deletePost(props.post._id)}>Delete</button></td>
     </tr>
   )
 }
